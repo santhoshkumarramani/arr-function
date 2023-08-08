@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arr-function</title>
+</head>
+<body>
+	
+	<script>
+	
+			//1. Write a JavaScript program to sort the items of an array.
+
+			var myArr1=["gokul","santhosh","vijay","syed"]
+			console.log("Array:"+myArr1);
+			var newArr1=myArr1.sort();	//sort() displays correct result when alphanumeric values present in array 
+			console.log("sorted Array:"+newArr1);
+
+			var myArr=[5,9,4,2,3,10];
+			console.log("Before sorted:"+myArr);
+			var sortArr=myArr.sort(function(a,b){return a-b;}); //declare a function inside sort() for sorting numeric elmt
+			console.log("sorted array:"+sortArr);
+
+			//2. Add an element to an array front and back without push and unshift
+
+			var colors=["red","green","blue"];
+			console.log("Array:"+colors);
+			colors.splice(0,0,"yellow");	//element inserted at first using concat()
+			console.log("After insertion:"+colors);
+			colors.splice(4,0,"black");		//element inserted at last using splice()
+			console.log("After insertion:"+colors);
+
+			var colors1=["while"];
+			colors2=colors.concat(colors1);	//element inserted at last using concat()
+			console.log("After insertion:"+colors2);
+
+			//3. Find the names in the array		//includes() checks whether the value is present or not
+			var myArr1=["hi","nila","maha","jai"]
+			console.log(myArr1.includes("nila"));	//if the value is present it returns true
+			console.log(myArr1.includes("ni"));		// returns false
+
+			// 4. Filter an array greater than 10
+			var myArr=[5,9,4,25,3,10,11,13,21];
+			function findVal(n)
+			{
+				return n>10;
+			}
+			var res=myArr.filter(findVal);
+			console.log(res);
+
+			// 5. Check the findindex less then 20
+			var myArr=[35,9,4,25,3,10,11,13,21];
+			function findVal(n)
+			{
+				return n<20;
+			}
+			var res=myArr.findIndex(findVal);	//findIndex()returns the index (position) of the 1st element that passes a test.
+			console.log(res);
+	
+	
+	
+	</script>
+</body>
+</html>
